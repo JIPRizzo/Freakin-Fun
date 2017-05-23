@@ -4,6 +4,10 @@ class ToysController < ApplicationController
     @toys = Toy.where() #correct ActiveRecord/SQL query
   end
 
+  def new
+    @toy = Toy.new
+  end
+
 
   def show
     @toy = Toy.find(params[:id])

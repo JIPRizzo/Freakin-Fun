@@ -1,2 +1,12 @@
-<h1>Toys#show</h1>
-<p>Find me in app/views/toys/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1><%= @toy.name %></h1>
+      <p><%= @toy.description %></p>
+      <p><%= @toy.price_cents %></p>
+
+      <%= link_to 'Back' root_path%>
+    </div>
+  </div>
+</div>
+
