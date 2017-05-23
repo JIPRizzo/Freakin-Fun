@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine
 
   resources :toys, only: [:index, :show] do
     resources :bookings, only: []
