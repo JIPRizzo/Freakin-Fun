@@ -1,7 +1,12 @@
 class ToysController < ApplicationController
+  skip_before_action :authenticate_user!
 
   def index
     @toys = Toy.where() #correct ActiveRecord/SQL query
+  end
+
+  def new
+    @toy = Toy.new
   end
 
 
