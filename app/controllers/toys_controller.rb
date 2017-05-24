@@ -9,7 +9,6 @@ class ToysController < ApplicationController
     @toy = Toy.new
   end
 
-
   def show
     @toy = Toy.find(params[:id])
   end
