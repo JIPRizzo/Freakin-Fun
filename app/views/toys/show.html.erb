@@ -1,12 +1,40 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1><%= @toy.name %></h1>
-      <p><%= @toy.description %></p>
-      <p><%= @toy.price_cents %></p>
 
-      <%= link_to 'Back', root_path%>
+<div class="media">
+  <div class="media-body">
+    <div class="media-section">
+      <h2><%= @toy.name %></h2>
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @toy.image.path %>');">
+      </div>
+    </div>
+    <div class="media-section">
+      <h2>Description</h2>
+      <p><%= @toy.description %></p>
+    </div>
+  </div>
+  <div class="media-aside">
+    <div class="media-section">
+      <%= simple_form_for [@toy, @booking] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: "Name of your event" %>
+    <%= f.input :address %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+     </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+    </div>
+
+    <div class="media-section price text-center">
+      <p><%= @toy.price_cents %>€ per day</p>
     </div>
   </div>
 </div>
+
+
+
 

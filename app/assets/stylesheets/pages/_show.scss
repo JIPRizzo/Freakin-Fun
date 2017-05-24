@@ -1,0 +1,49 @@
+.media {
+  display: flex;
+  padding: 20px;
+  padding-right: 40px;
+}
+
+.media-body {
+  flex: 1 1 auto;
+  padding: 20px;
+}
+
+.media-body img{
+  width: 100%;
+}
+
+.media-aside {
+  flex: 0 0 400px;
+  padding: 30px;
+  align-self: stretch;
+  background: #F8F7F7;
+  border-left: 1px solid #f0efef;
+}
+
+.media-section {
+  margin: 40px auto;
+}
+
+.media-section:first-child {
+  margin-top: 0;
+}
+
+.media-section:last-child {
+  margin-bottom: 0;
+}
+
+.card {
+  width: 500px;
+  height: 300px;
+}
+
+.price {
+  background-color: rgba(45,45,45,0.9);
+  color: white;
+  margin-right: 200px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-top: 10px;
+
+}
