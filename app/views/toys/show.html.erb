@@ -1,12 +1,52 @@
+<!--
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1><%= @toy.name %></h1>
-      <p><%= @toy.description %></p>
+      <div id="description">
+        <p><%= @toy.description %></p>
+      </div>
       <p><%= @toy.price_cents %></p>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url();">
 
-      <%= link_to 'Back', root_path%>
+          <div class="card-description">
+            <p>Image of the selected toy</p>
+          </div>
+          <img class="card-user avatar avatar-large" >
+          </div>
+        </div>
+        <%= link_to 'Back', root_path%>
+    </div>
+  </div>
+</div> -->
+
+<div class="media">
+  <div class="media-body">
+    <div class="media-section">
+      <h2><%= @toy.name %></h2>
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url();">
+          </div>
+    </div>
+    <div class="media-section">
+      <h2>Description</h2>
+      <p><%= @toy.description %></p>
+    </div>
+  </div>
+  <div class="media-aside">
+    <div class="media-section">
+      <h2>Date Picker</h2>
+      ...
+    </div>
+
+
+    <div class="media-section">
+      <h2>Price</h2>
+      <p><%= @toy.price_cents %></p>
+      <%= link_to 'Request to book',root_path, class: "btn"%>
     </div>
   </div>
 </div>
+
+
 
