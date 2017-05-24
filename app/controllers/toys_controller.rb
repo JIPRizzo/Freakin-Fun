@@ -10,7 +10,9 @@ class ToysController < ApplicationController
   end
 
   def show
+    # params[:toy_id]
     @toy = Toy.find(params[:id])
+    @booking = Booking.new
   end
 
 end

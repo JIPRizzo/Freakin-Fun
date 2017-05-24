@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
   resources :toys, only: [:index, :show, :new] do
-    resources :bookings, only: []
+    resources :bookings, only: [:create]
 
 end
   devise_for :users
