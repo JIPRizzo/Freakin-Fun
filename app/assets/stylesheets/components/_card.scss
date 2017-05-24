@@ -1,12 +1,23 @@
+
+.container h2 {
+  font-size: 35px;
+  color: #75229b
+}
+
+
+
 .card {
-  height: 250px;
-  width: 300px;
+  height: 400px;
+  width: 350px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  color: #75229b;
+  color: white;
   position: relative;
-  border: 2px solid#75229b;
+  border: 3px solid#75229b;
   background-color: white;
   border-radius: 10px;
+  padding: 20px;
+
+
 }
 .card-user {
   position: absolute;
@@ -28,8 +39,11 @@
 .card-description h2 {
   font-size: 24px;
 }
+.card-description h3 {
+  font-size: 17px;
+}
 .card-description p {
-  font-size: 13px;
+  font-size: 14px;
   }
 .card-link {
   position: absolute;

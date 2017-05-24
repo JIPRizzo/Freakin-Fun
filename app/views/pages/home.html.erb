@@ -15,14 +15,11 @@
         <p>Turn your kid's birthday party into an unforgettable experience</p>
       </div>
       <div class="col-xs-12 ">
-          <form>
-            <input class="search" type="text" placeholder="Start_Date" id= "start_date">
-            <input class="search" type="text" placeholder="End_Date" id= "end_date">
-            <input class="search" type="text" placeholder="Postcode" id="postcode">
-
-            <%= link_to "Search", toys_path, class: "btn" %>
-
-
+          <form action="/toys" method="get">
+            <input class="search datepicker" type="text" placeholder="Start Date" id= "start_date" name="start_date">
+            <input class="search datepicker" type="text" placeholder="End Date" id= "end_date" name="end_date">
+            <input class="search" type="text" placeholder="Postcode" id="postcode" name="postcode">
+            <input type="submit" class="btn">
           </form>
       </div>
     </div>
@@ -31,34 +28,37 @@
 
 
       <div class="container">
-        <h2 class="text-center">Users' testimonials</h2>
+        <h2 class="text-center line">Users' Testimonials</h2>
         <div class="row">
           <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url();">
+            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('<%= cl_image_path "http://res.cloudinary.com/dozuivp7c/image/upload/v1495634083/tzaollktntrbawnkbn1u.jpg", height: 300, width: 300, crop: :fill %>');background-size: cover;">
 
               <div class="card-description">
-                <p>Some review about a bouncy castle.</p>
+                <h3>Jose Ignacio</h3>
+                <p> I was having a party for my daughter's 8th birthday and was looking for a way I could make is truly magical for her. I rented a massive bouncy castle that was delivered to my house with no problem. My daughter and her friends had a lovely time and very much enjoyed jumping and laughing in the castle. </p>
               </div>
               <img class="card-user avatar avatar-large">
             </div>
           </div>
           <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url();">
+              <div class="card" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url('<%= cl_image_path "http://res.cloudinary.com/dozuivp7c/image/upload/v1495634059/lia9cpax6tvppwrgw5jb.jpg", height: 250, width: 300, crop: :fill %>');background-size: cover;">
 
-              <div class="card-description">
-                <p>Smashed that pinata and got lots of candy</p>
+                <div class="card-description">
+                 <h3>Maria Ortez</h3>
+                  <p>My daughter's birthday was approaching and I was looking for possible ways to make it a fun and traditional experience for her. People in Denmark don't really use pinatas, but thankfully I found this amazing app and was able to get a cute pinata for my daugher. She was very happy with the amount of candy that came out of it.</p>
+                </div>
+                <img class="card-user avatar avatar-large" >
               </div>
-              <img class="card-user avatar avatar-large" >
             </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url();">
+            <div class="col-xs-12 col-sm-4">
+              <div class="card" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url('<%= cl_image_path "http://res.cloudinary.com/dozuivp7c/image/upload/v1495634069/clfu3yoltfovq3cy2kub.jpg", height: 250, width: 300, crop: :fill %>'); background-size: cover;">
 
-              <div class="card-description">
-                <p>Some review about the trampoline</p>
+                <div class="card-description">
+                  <h3>Happy Mama Livia</h3>
+                  <p>I rented a trampoline for my kids for a whole month during the summer. I loved seeing my children that happy and actively spending time in the garden instead of playing video games at home.</p>
+                </div>
+                <img class="card-user avatar avatar-large" >
               </div>
-              <img class="card-user avatar avatar-large" >
-            </div>
           </div>
         </div>
       </div>
