@@ -1,2 +1,30 @@
-<h1>Toys#index</h1>
-<p>Find me in app/views/toys/index.html.erb</p>
+
+
+
+<h1> Toys for kids aged 3+  </h1>
+
+<p>There is some kid in all of us - who are we to prescribe a maximum age?</p>
+
+
+Select from a category below to see a list of available toys:
+
+
+<div class="container">
+  <div class="row">
+    <% @toys.each do |toy| %>
+    <div class="col-xs-12 col-md-4">
+      <div class="toy-card">
+        <div class="card-category"><%= "$#{toy.price_usd} per day" %></div>
+        <div class="card-description">
+          <h2><%= toy.name %></h2>
+          <p><%= toy.description %></p>
+        </div>
+        <%= cl_image_tag toy.image.public_id, class: "card-user toy-avatar" %>
+        <a class="card-link" href="#" ></a>
+      </div>
+
+
+    </div>
+    <% end %>
+  </div>
+</div>

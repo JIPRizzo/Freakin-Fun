@@ -1,9 +1,9 @@
 class ToysController < ApplicationController
   skip_before_action :authenticate_user!
 
-  def index
-    @toys = Toy.where() #correct ActiveRecord/SQL query
-  end
+
+
+
 
   def new
     @toy = Toy.new
@@ -14,5 +14,26 @@ class ToysController < ApplicationController
     @toy = Toy.find(params[:id])
   end
 
+
+
+#---------------------------------------------------------------#
+
+  def index
+    @toys = Toy.all
+  end
+
+# Pseudo code #
+# index - list of available toys is defined as result of two dates
+# for purposes of this user journey  toy.all = index
+
+
+
+
 end
+
+
+
+
+
+
 
