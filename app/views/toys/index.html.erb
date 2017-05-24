@@ -1,30 +1,35 @@
 
 
 
-<h1> Toys for kids aged 3+  </h1>
+<h1> All our Toys are for kids aged 3+  </h1>
 
-<p>There is some kid in all of us - who are we to prescribe a maximum age?</p>
-
-
-Select from a category below to see a list of available toys:
+<!-- ************************ Banner for Toys *******************************-->
 
 
-<div class="container">
-  <div class="row">
-    <% @toys.each do |toy| %>
-    <div class="col-xs-12 col-md-4">
-      <div class="toy-card">
-        <div class="card-category"><%= "$#{toy.price_usd} per day" %></div>
-        <div class="card-description">
-          <h2><%= toy.name %></h2>
-          <p><%= toy.description %></p>
-        </div>
-        <%= cl_image_tag toy.image.public_id, class: "card-user toy-avatar" %>
-        <a class="card-link" href="#" ></a>
-      </div>
-
-
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path "pros5_okoiha", crop: :fill %>')">
+  <div class="banner-content">
+    <h3 style="padding-bottom: 50px;">"There is a little bit of kid in all of us - who are we to prescribe when you're an adult?"</h1>
+      <p style="padding-bottom: 50px;">What can we include here?</p>
     </div>
-    <% end %>
+  </div>
+
+  <!-- ************************ CARDS for Toys *******************************-->
+  <div class="toy-cards-wrapper"><div class="container">
+    <div class="row">
+      <% @toys.each do |toy| %>
+      <div class="col-xs-12 col-md-4">
+        <div class="toy-card">
+          <div class="card-category"><%= "$#{toy.price_usd} per day" %></div>
+          <div class="card-description">
+            <h2><%= toy.name %></h2>
+            <p><%= toy.description %></p>
+          </div>
+          <%= cl_image_tag toy.image.path, class: "card-user toy-avatar" %>
+          <a class="card-link" href="<%= toy_path(toy) %>"></a>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
