@@ -3,7 +3,7 @@
 .toy-card {
   height: 250px;
   width: 300px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  box-shadow: 10px 10px 5px #888888;
   color: #75229b;
   position: relative;
   border: 2px solid#75229b;
@@ -13,7 +13,9 @@
 }
 
 .toy-avatar {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
 }
+
+
