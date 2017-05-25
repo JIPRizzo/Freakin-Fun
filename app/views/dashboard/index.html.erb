@@ -1,0 +1,67 @@
+
+<h1>Dashboard</h1>
+<h3>Toys I booked</h3>
+<!-- List all of User Bookings with respecive status -->
+
+<ul>
+<% @bookings.each do |booking| %>
+  <li>
+    <%= booking.name %> |
+    <%= booking.address %> |
+    <%= booking.start_date %> |
+    <%= booking.end_date %> |
+    <%= booking.status %>
+  </li>
+<% end %>
+</ul>
+
+<!-- Incoming bookings -->
+<h3>Bookings with me as owner</h3>
+<ul>
+<% @bookings_provided.each do |booking| %>
+  <li>
+    <%= booking.name %> |
+    <%= booking.address %> |
+    <%= booking.start_date %> |
+    <%= booking.end_date %> |
+    <%= booking.status %> |
+
+    <% if booking.status == "pending" %>
+
+      <%= link_to "Approve", toy_booking_path(booking.toy, booking, execute: "approved"), method: :put %> |
+      <%= link_to "Decline", toy_booking_path(booking.toy, booking, execute: "declined"), method: :put %>
+
+    <% end %>
+
+  </li>
+<% end %>
+</ul>
+
+
+<!-- List all toys user listed -->
+
+<h3>All my toys</h3>
+<ul>
+<% current_user.toys.each do |toy| %>
+  <li>
+    <%= toy.name %> |
+    <%= toy.description %> |
+    <%= toy.price_usd %> |
+    <%= cl_image_tag toy.image.path, height: 50, crop: :fill  %>
+
+    <!-- Iterate on toy.bookings -->
+    <ul>
+      <% toy.bookings.each do |booking| %>
+        <li>
+          Booked on:
+          <%= booking.start_date %> -
+          <%= booking.end_date %> by
+          <%= booking.user.first_name %> for
+          "<%= booking.name %>"
+        </li>
+      <% end %>
+    </ul>
+
+  </li>
+<% end %>
+</ul>

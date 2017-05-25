@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :toys, dependent: :destroy
 end
 
 # In order to create user from rails console remember: devise requires that you introduce

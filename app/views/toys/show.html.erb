@@ -13,10 +13,10 @@
   </div>
   <div class="media-aside">
     <div class="media-section">
-      <%= simple_form_for [@toy, @booking] do |f| %>
+    <%= simple_form_for [@toy, @booking] do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs booking_form">
     <%= f.input :name, label: "Name of your event" %>
     <%= f.input :address %>
     <%= f.input :start_date %>
