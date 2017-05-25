@@ -2,11 +2,8 @@ class ToysController < ApplicationController
   skip_before_action :authenticate_user!
 
 
-
-
-
-  def new
-    @toy = Toy.new
+  def index
+    @toys = Toy.all
   end
 
   def show
@@ -16,18 +13,26 @@ class ToysController < ApplicationController
   end
 
 
-
-#---------------------------------------------------------------#
-
-  def index
-    @toys = Toy.all
+  def new
+    @toy = Toy.new
   end
 
-# Pseudo code #
-# index - list of available toys is defined as result of two dates
-# for purposes of this user journey  toy.all = index
+  def create
+    @toy = Toy.new(toy_params)
+    @toy.user = current_user
+    if @toy.save
+      redirect_to @toy
+    else
+      render :new
+    end
+  end
 
 
+  private
+
+  def toy_params
+    params.require(:toy).permit(:name, :description, :price_cents, :image)
+  end
 
 
 end
