@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  mount Attachinary::Engine => "/attachinary"
+mount Attachinary::Engine => "/attachinary"
 
-  resources :toys, only: [:index, :show, :new] do
-    resources :bookings, only: [:create]
-
+resources :toys, only: [:index, :show, :new, :create] do
+  resources :bookings, only: [:create, :update]
 end
-  devise_for :users
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+devise_for :users
+root to: 'pages#home'
+get "/dashboard", to: "dashboard#index" # controller name & respective action # added to rails routes in order refelct on routes.rb
 end
 
