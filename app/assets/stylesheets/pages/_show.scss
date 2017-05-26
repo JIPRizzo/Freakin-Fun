@@ -22,10 +22,32 @@
   border-radius: 15px;
   box-shadow: 10px 10px 5px #888888;
   height: 500px;
+  position: absolute;
+  top: 230px;
+  right: 70px;
 }
 
 .media-section {
   margin: 40px auto;
+}
+
+.showcard-description {
+  width: 700px;
+  height: 200px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 5px 5px 5px #888888;
+  border: 3px solid#DBA8AC;
+}
+
+.showcard-description h2 {
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.showcard-description p {
+  padding-top: 30px;
+  padding-left: 20px;
 }
 
 .media-section:first-child {
@@ -44,13 +66,11 @@
 }
 
 .price {
-  background-color: #A42CD6;
-  color: white;
+  color: #75229b ;
   margin-right: 200px;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 5px;
   padding-top: 10px;
-
 }
 
 .booking_form {
