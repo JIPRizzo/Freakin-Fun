@@ -11,7 +11,8 @@ class BookingsController < ApplicationController
     @booking.toy = Toy.find(params[:toy_id])
     @booking.status = "pending"
     if @booking.save
-      redirect_to @booking.toy
+      flash[:notice] = "Your booking has been confirmed"
+      redirect_to dashboard_path
     else
       render "toys/show"
     end
