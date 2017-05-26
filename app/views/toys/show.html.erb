@@ -17,13 +17,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs booking_form">
-    <%= f.input :name, label: "Name of your event" %>
-    <%= f.input :address %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
+    <%= f.input :name, label: "Name of your event", required: false %>
+    <%= f.input :address, required: false%>
+    <%= f.input :start_date, required: false%>
+    <%= f.input :end_date, required: false %>
      </div>
 
-  <div class="form-actions">
+  <div class="form-actions create_button">
     <%= f.button :submit %>
   </div>
 <% end %>
