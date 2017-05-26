@@ -1,7 +1,7 @@
 
 
 .toy-card {
-  height: 250px;
+  height: 360px;
   width: 300px;
   box-shadow: 10px 10px 5px #888888;
   color: #75229b;
@@ -10,12 +10,14 @@
   background-color: white;
   border-radius: 10px;
   margin-bottom: 30px;
+  margin-top: 40px;
+  opacity: 0.8;
 }
 
 .toy-avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  width: 270px;
+  height: 200px;
+
 }
 
 
