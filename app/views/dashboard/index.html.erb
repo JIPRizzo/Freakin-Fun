@@ -1,8 +1,9 @@
 
-<h1>Fun Panel</h1>
+<h1 class="text-center">Fun Panel</h1>
 
 <!-- Incoming bookings -->
-
+<div class="container-dashboard" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.1)), url('<%= cl_image_path "lzgh6qv8tc6viibfcy5p" %>');background-size: cover;">
+  <div class= "booking-card1">
     <h3>Fun Provider</h3>
     <p>Please make sure you respond to all incoming requests</p>
 
@@ -24,8 +25,11 @@
         <% end %>
       </li>
     </ul>
+  </div>
+
 
 <!-- List all of User Bookings with respecive status -->
+  <div class= "booking-card1">
     <h3>Toys I booked</h3>
 
     <ul>
@@ -39,35 +43,47 @@
       </li>
       <% end %>
     </ul>
+  </div>
 
-<!-- List all toys user listed -->
-<h3>Toy Stash</h3>
-<p>See which of your toys are for hire and where your toys currently are:</p>
 
-<ul>
-  <% current_user.toys.each do |toy| %>
-  <li>
-    <%= toy.name %> |
-    <%= toy.description %> |
-    <%= toy.price_usd %> |
-    <%= cl_image_tag toy.image.path, height: 50, crop: :fill  %>
+</div>
 
-    <!-- Iterate on toy.bookings -->
+ <div class= "booking-card2">
+    <h3 class="yourtoycategory">Toy Stash</h3>
+    <p class="yourtoydescription">See which of your toys are for hire and where your toys currently are:</p>
+
     <ul>
-      <% toy.bookings.each do |booking| %>
+      <% current_user.toys.each do |toy| %>
       <li>
-        Booked on:
-        <%= booking.start_date %> -
-        <%= booking.end_date %> by
-        <%= booking.user.first_name %> for
-        "<%= booking.name %>"
+        <%= toy.name %> |
+        <%= toy.description %> |
+        <%= toy.price_usd %> |
+        <%= cl_image_tag toy.image.path, height: 50, crop: :fill  %>
+
+        <!-- Iterate on toy.bookings -->
+        <ul>
+          <% toy.bookings.each do |booking| %>
+          <li>
+            Booked on:
+            <%= booking.start_date %> -
+            <%= booking.end_date %> by
+            <%= booking.user.first_name %> for
+            "<%= booking.name %>"
+          </li>
+          <!-- If a toy has been rented out, owner can see where it is on static map -->
+          <% if booking.status == "approved" %>
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{booking.address}" %>
+          <% end %>
+          <% end %>
+        </ul>
       </li>
-      <!-- If a toy has been rented out, owner can see where it is on static map -->
-      <% if booking.status == "approved" %>
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{booking.address}" %>
-      <% end %>
       <% end %>
     </ul>
-  </li>
-  <% end %>
-</ul>
+  </div>
+
+
+
+
+
+<!-- List all toys user listed -->
+
