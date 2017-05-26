@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20170525101553) do
     t.integer  "toy_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "status"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "status"
     t.index ["toy_id"], name: "index_bookings_on_toy_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
