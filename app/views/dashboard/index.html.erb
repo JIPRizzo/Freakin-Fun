@@ -52,6 +52,8 @@
     <h3 class="yourtoycategory">Toy Stash</h3>
     <p class="yourtoydescription">See which of your toys are for hire and where your toys currently are:</p>
 
+    <!-- List all toys user listed -->
+
     <ul>
       <% current_user.toys.each do |toy| %>
       <li>
@@ -76,14 +78,8 @@
           <% end %>
           <% end %>
         </ul>
-      </li>
-      <% end %>
+        </li>
+          <% end %>
+
     </ul>
   </div>
-
-
-
-
-
-<!-- List all toys user listed -->
-
