@@ -1,12 +1,44 @@
+.container-wrapper {
+  background-size: cover;
+
+}
+
+.container-wrapper h2 {
+  padding-top: 20px;
+}
+
+.container-box {
+  display:flex;
+  justify-content: center;
+  padding: 20px;
+}
+
 .card-work {
-  height: 200px;
-  width: 200px;
+  height: 220px;
+  width: 220px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  color: white;
+  color: black;
   position: relative;
   background-color: #CD8B76;
   padding: 20px;
+  border-radius: 15px ;
+  margin: 50px;
+  opacity: 0.6;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.card-work2 {
+  height: 220px;
+  width: 220px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: black;
+  position: relative;
+  background-color: #6DFE46;
+  padding: 20px;
   border-radius: 15px;
+  margin: 50px;
+  opacity: 0.6;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .wrapper-white {
@@ -14,12 +46,20 @@
   width: 300px;
   border: 3px solid#DBA8AC;
   border-radius: 15px;
+  margin: 30px;
+  margin-top: 30px;
+  margin-bottom: 100px;
 }
 
 
 .container h2 {
   font-size: 35px;
-  color: #75229b
+  color: black;
+}
+
+.container-again {
+  display: flex;
+  justify-content: space-around;
 }
 
 .card {
@@ -29,8 +69,9 @@
   color: white;
   position: relative;
   background-color: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: 15px;
+
 }
 .card-user {
   position: absolute;
@@ -39,8 +80,8 @@
 }
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  bottom: 100px;
+  left: 200px;
   font-size: 10px;
   text-transform: uppercase;
 }
