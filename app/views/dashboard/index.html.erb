@@ -1,11 +1,8 @@
 
 <h1>Fun Panel</h1>
 
-
-
 <!-- Incoming bookings -->
-<div class="container">
-  <div class="#">
+
     <h3>Fun Provider</h3>
     <p>Please make sure you respond to all incoming requests</p>
 
@@ -27,11 +24,8 @@
         <% end %>
       </li>
     </ul>
-  </div>
-</div>
+
 <!-- List all of User Bookings with respecive status -->
-<div class="container">
-  <div class="box - content">
     <h3>Toys I booked</h3>
 
     <ul>
@@ -45,8 +39,7 @@
       </li>
       <% end %>
     </ul>
-  </div>
-</div>
+
 <!-- List all toys user listed -->
 <h3>Toy Stash</h3>
 <p>See which of your toys are for hire and where your toys currently are:</p>
@@ -74,10 +67,7 @@
       <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{booking.address}" %>
       <% end %>
       <% end %>
-
-
     </ul>
-
   </li>
   <% end %>
 </ul>
