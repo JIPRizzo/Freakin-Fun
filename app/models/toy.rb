@@ -6,7 +6,7 @@ class Toy < ApplicationRecord
 
 
   def price_usd
-    price_cents / 100.00
+    (price_cents / 100.00).to_i
   end
 
 end
