@@ -5,41 +5,46 @@
 <%= @toy.description %>
 <% end %>
 
-<div class="media">
-  <div class="media-body">
-    <div class="media-section">
-      <h2><%= @toy.name %></h2>
-        <div class="card-show" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @toy.image.path %>');background-size: cover;">
+  <div class="media">
+    <div class="media-body">
+      <div class="media-section">
+        <h2><%= @toy.name %></h2>
+          <div class="card-show" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @toy.image.path %>');background-size: cover;">
+        </div>
+      </div>
+
+      <div class="media-section">
+        <div class="showcard-description">
+        <h2>Description</h2>
+        <p><%= @toy.description %></p>
+        </div>
       </div>
     </div>
-    <div class="media-section">
-      <h2>Description</h2>
-      <p><%= @toy.description %></p>
-    </div>
-  </div>
-  <div class="media-aside">
-    <div class="media-section">
-    <%= simple_form_for [@toy, @booking] do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs booking_form">
-    <%= f.input :name, label: "Name of your event", required: false %>
-    <%= f.input :address, required: false%>
-    <%= f.input :start_date, required: false%>
-    <%= f.input :end_date, required: false %>
-     </div>
+    <div class="media-aside">
+      <div class="media-section">
+      <%= simple_form_for [@toy, @booking] do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-actions create_button">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-inputs booking_form">
+      <%= f.input :name, label: "Name of your event", required: false %>
+      <%= f.input :address, required: false%>
+      <%= f.input :start_date, required: false%>
+      <%= f.input :end_date, required: false %>
+       </div>
+
+    <div class="form-actions create_button">
+      <%= f.button :submit %>
     </div>
+  <% end %>
+      </div>
+
 
     <div class="media-section price text-center">
       <p>$<%= @toy.price_usd %> per day</p>
     </div>
   </div>
-</div>
+
 
 
 
