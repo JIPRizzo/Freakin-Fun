@@ -1,14 +1,19 @@
+
+<div class="form_new ">
 <%= simple_form_for(@toy) do |f| %>
   <%= f.error_notification %>
 
+<div class="form_new_design">
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :price_cents %>
-    <%= f.input :image, as: :attachinary %>
+    <%= f.input :name, required:false %>
+    <%= f.input :description, required:false%>
+    <%= f.input :price_cents, required:false %>
+    <%= f.input :image, as: :attachinary, required:false %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+</div>
+</div>

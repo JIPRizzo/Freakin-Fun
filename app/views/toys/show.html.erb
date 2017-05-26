@@ -1,3 +1,9 @@
+<% content_for(:title) do %>
+<%= @toy.name %>
+<% end %>
+<% content_for(:description) do %>
+<%= @toy.description %>
+<% end %>
 
   <div class="media">
     <div class="media-body">
@@ -33,9 +39,9 @@
   <% end %>
       </div>
 
-      <div class="media-section price text-center">
-        <p><%= @toy.price_cents %>€ per day</p>
-      </div>
+
+    <div class="media-section price text-center">
+      <p>$<%= @toy.price_usd %> per day</p>
     </div>
   </div>
 
